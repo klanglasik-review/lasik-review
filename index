@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLANG LASIK Review — ศูนย์ตรวจและรักษาสายตา โรงพยาบาลกลาง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   LASIK Review System — Global Styles
+   Theme: White + Sky Blue + Mint Green
+   Font: Prompt
+═══════════════════════════════════════════════════════════ */
+
+:root {
+  --sky:        #38BDF8;
+  --sky-light:  #E0F4FD;
+  --sky-mid:    #7DD3FC;
+  --sky-dark:   #0284C7;
+  --mint:       #34D399;
+  --mint-light: #D1FAE5;
+  --mint-dark:  #059669;
+  --white:      #FFFFFF;
+  --bg:         #F0F9FF;
+  --bg2:        #F8FFFE;
+  --surface:    #FFFFFF;
+  --border:     #E0F2FE;
+  --border2:    #BAE6FD;
+  --text-h:     #0C4A6E;
+  --text-b:     #164E63;
+  --text-m:     #0E7490;
+  --text-s:     #64748B;
+  --text-xs:    #94A3B8;
+  --red:        #EF4444;
+  --red-light:  #FEE2E2;
+  --amber:      #F59E0B;
+  --amber-light:#FEF3C7;
+  --shadow-sm:  0 1px 3px rgba(56,189,248,.10), 0 1px 2px rgba(12,74,110,.06);
+  --shadow-md:  0 4px 16px rgba(56,189,248,.13), 0 2px 6px rgba(12,74,110,.08);
+  --shadow-lg:  0 8px 32px rgba(56,189,248,.16), 0 4px 12px rgba(12,74,110,.10);
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Prompt', sans-serif;
+  background: var(--bg);
+  color: var(--text-b);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1 { font-size: clamp(20px, 4vw, 28px); font-weight: 700; color: var(--text-h); }
+h2 { font-size: clamp(16px, 3vw, 22px); font-weight: 600; color: var(--text-h); }
+h3 { font-size: clamp(14px, 2.5vw, 18px); font-weight: 600; color: var(--text-b); }
+p  { font-size: 14px; line-height: 1.7; }
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.app-shell { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header {
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-logo {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.header-title { font-size: 16px; font-weight: 700; color: var(--text-h); line-height: 1.2; }
+.header-subtitle { font-size: 11px; color: var(--text-s); font-weight: 400; }
+.header-actions { display: flex; gap: 8px; align-items: center; }
+
+/* ── Navigation Tabs ─────────────────────────────────────────── */
+.nav-tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  padding: 0 24px;
+  gap: 4px;
+  overflow-x: auto;
+}
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-s);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all .2s;
+  font-family: 'Prompt', sans-serif;
+}
+.nav-tab:hover { color: var(--sky-dark); }
+.nav-tab.active { color: var(--sky-dark); border-bottom-color: var(--sky); font-weight: 600; }
+
+/* ── Main Content ────────────────────────────────────────────── */
+.main { flex: 1; padding: 24px; max-width: 1100px; margin: 0 auto; width: 100%; }
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.card-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card-body { padding: 20px 24px; }
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; min-height: 38px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 14px; font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: none; cursor: pointer;
+  transition: all .18s; text-decoration: none;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: linear-gradient(135deg, var(--sky), var(--sky-dark)); color: white; box-shadow: 0 2px 8px rgba(56,189,248,.3); }
+.btn-primary:hover { box-shadow: 0 4px 14px rgba(56,189,248,.45); filter: brightness(1.05); }
+.btn-success { background: linear-gradient(135deg, var(--mint), var(--mint-dark)); color: white; box-shadow: 0 2px 8px rgba(52,211,153,.3); }
+.btn-success:hover { box-shadow: 0 4px 14px rgba(52,211,153,.45); filter: brightness(1.05); }
+.btn-danger { background: var(--red); color: white; }
+.btn-danger:hover { background: #DC2626; }
+.btn-ghost { background: transparent; color: var(--text-m); border: 1.5px solid var(--border2); }
+.btn-ghost:hover { background: var(--sky-light); border-color: var(--sky); }
+.btn-sm { padding: 6px 14px; min-height: 30px; font-size: 13px; }
+.btn-lg { padding: 14px 28px; min-height: 48px; font-size: 15px; }
+.btn-full { width: 100%; justify-content: center; }
+.btn:disabled { opacity: .5; cursor: not-allowed; pointer-events: none; }
+
+/* ── Form Controls ───────────────────────────────────────────── */
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block; font-size: 13px; font-weight: 600;
+  color: var(--text-b); margin-bottom: 6px;
+}
+.form-label .req { color: var(--red); margin-left: 3px; }
+.form-control {
+  width: 100%; padding: 10px 14px; min-height: 42px;
+  font-family: 'Prompt', sans-serif; font-size: 14px;
+  border: 1.5px solid var(--border2); border-radius: var(--radius-sm);
+  background: var(--white); color: var(--text-b);
+  transition: border-color .2s, box-shadow .2s; outline: none;
+}
+.form-control:focus { border-color: var(--sky); box-shadow: 0 0 0 3px rgba(56,189,248,.15); }
+.form-control::placeholder { color: var(--text-xs); }
+textarea.form-control { resize: vertical; min-height: 100px; line-height: 1.6; }
+select.form-control { cursor: pointer; }
+
+/* ── Star Rating ─────────────────────────────────────────────── */
+.star-rating { display: flex; gap: 4px; align-items: center; flex-direction: row-reverse; justify-content: flex-end; }
+.star-rating input { display: none; }
+.star-rating label {
+  font-size: 28px; cursor: pointer; color: #E2E8F0;
+  transition: color .15s; padding: 2px;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label { color: var(--amber); }
+
+/* ── Review Card ─────────────────────────────────────────────── */
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: box-shadow .2s, transform .2s;
+}
+.review-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.review-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.reviewer-info { display: flex; align-items: center; gap: 10px; }
+.reviewer-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky-light), var(--mint-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 700; color: var(--sky-dark);
+  flex-shrink: 0;
+}
+.reviewer-name { font-size: 14px; font-weight: 600; color: var(--text-b); }
+.reviewer-date { font-size: 12px; color: var(--text-xs); margin-top: 2px; }
+.review-stars { display: flex; gap: 2px; }
+.star { font-size: 16px; }
+.star.filled { color: var(--amber); }
+.star.empty { color: #E2E8F0; }
+.review-comment { font-size: 14px; color: var(--text-b); line-height: 1.7; margin-bottom: 12px; }
+.review-images { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; margin-top: 10px; }
+.review-img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: var(--radius-sm); cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  border: 1px solid var(--border);
+}
+.review-img:hover { transform: scale(1.04); box-shadow: var(--shadow-md); }
+.anon-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--sky-light); color: var(--sky-dark);
+  font-size: 11px; font-weight: 500; padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── Status Badge ─────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.badge-pending  { background: var(--amber-light); color: #92400E; }
+.badge-approved { background: var(--mint-light); color: var(--mint-dark); }
+.badge-rejected { background: var(--red-light); color: #991B1B; }
+
+/* ── Doctor Select ────────────────────────────────────────────── */
+.doctor-select-card {
+  background: linear-gradient(135deg, var(--sky-light) 0%, var(--mint-light) 100%);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+.doctor-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.doctor-select-item {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all .2s;
+  text-align: center;
+}
+.doctor-select-item:hover { border-color: var(--sky); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.doctor-select-item.selected { border-color: var(--sky-dark); background: var(--sky-light); box-shadow: var(--shadow-md); }
+.doctor-avatar-lg {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 10px;
+}
+.doctor-name { font-size: 14px; font-weight: 600; color: var(--text-h); }
+.doctor-spec { font-size: 12px; color: var(--text-s); margin-top: 4px; }
+
+/* ── Admin Stats ─────────────────────────────────────────────── */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat-card {
+  background: var(--white); border-radius: var(--radius-md);
+  padding: 18px 20px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm); transition: box-shadow .2s;
+}
+.stat-card:hover { box-shadow: var(--shadow-md); }
+.stat-icon { font-size: 24px; margin-bottom: 8px; }
+.stat-number { font-size: 28px; font-weight: 700; color: var(--text-h); line-height: 1; }
+.stat-label { font-size: 12px; color: var(--text-s); margin-top: 4px; font-weight: 500; }
+
+/* ── Toggle ──────────────────────────────────────────────────── */
+.toggle-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+.toggle { width: 44px; height: 24px; background: var(--border2); border-radius: 12px; position: relative; transition: background .2s; flex-shrink: 0; }
+.toggle.on { background: var(--sky); }
+.toggle::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: white;
+  transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.toggle.on::after { transform: translateX(20px); }
+.toggle-label { font-size: 14px; font-weight: 500; color: var(--text-b); }
+
+/* ── Checkbox ─────────────────────────────────────────────────── */
+.checkbox-wrap { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.checkbox-wrap input[type="checkbox"] { display: none; }
+.checkbox-box {
+  width: 20px; height: 20px; border-radius: 5px; flex-shrink: 0; margin-top: 1px;
+  border: 2px solid var(--border2); background: var(--white); transition: all .2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.checkbox-wrap input:checked + .checkbox-box { background: var(--mint); border-color: var(--mint-dark); }
+.checkbox-wrap input:checked + .checkbox-box::after { content: '✓'; color: white; font-size: 13px; font-weight: 700; }
+.checkbox-label { font-size: 13px; color: var(--text-b); line-height: 1.5; }
+
+/* ── Loading / Empty / Error States ────────────────────────────── */
+.state-container {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 60px 24px; text-align: center;
+}
+.state-icon { font-size: 48px; margin-bottom: 16px; opacity: .6; }
+.state-title { font-size: 18px; font-weight: 600; color: var(--text-b); margin-bottom: 8px; }
+.state-desc { font-size: 14px; color: var(--text-s); max-width: 300px; line-height: 1.6; }
+.spinner {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 3px solid var(--border); border-top-color: var(--sky);
+  animation: spin .8s linear infinite; margin-bottom: 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Alert ───────────────────────────────────────────────────── */
+.alert {
+  padding: 12px 16px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px;
+  margin-bottom: 16px;
+}
+.alert-success { background: var(--mint-light); color: var(--mint-dark); border: 1px solid #6EE7B7; }
+.alert-error { background: var(--red-light); color: #991B1B; border: 1px solid #FECACA; }
+.alert-info { background: var(--sky-light); color: var(--sky-dark); border: 1px solid var(--sky-mid); }
+
+/* ── Modal / Lightbox ─────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.55);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; padding: 16px; backdrop-filter: blur(4px);
+  animation: fadeIn .2s;
+}
+@keyframes fadeIn { from { opacity: 0; } }
+.modal-box {
+  background: var(--white); border-radius: var(--radius-xl);
+  padding: 28px; max-width: 500px; width: 100%;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp .2s;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } }
+.modal-title { font-size: 18px; font-weight: 700; color: var(--text-h); margin-bottom: 20px; }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bg); border: none; cursor: pointer;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+  color: var(--text-s); transition: background .2s;
+}
+.modal-close:hover { background: var(--red-light); color: var(--red); }
+
+/* ── Image Lightbox ───────────────────────────────────────────── */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.92);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2000; cursor: zoom-out;
+}
+.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+
+/* ── Admin Login ──────────────────────────────────────────────── */
+.login-screen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--sky-light) 0%, var(--mint-light) 100%);
+  padding: 24px;
+}
+.login-box {
+  background: var(--white); border-radius: var(--radius-xl);
+  padding: 40px; max-width: 400px; width: 100%;
+  box-shadow: var(--shadow-lg); text-align: center;
+}
+.login-logo {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  border-radius: 20px; margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center; font-size: 34px;
+}
+
+/* ── Admin Review Table ───────────────────────────────────────── */
+.review-admin-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 18px 20px; margin-bottom: 12px;
+  transition: box-shadow .2s;
+}
+.review-admin-card:hover { box-shadow: var(--shadow-md); }
+.review-admin-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.review-admin-actions { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+
+/* ── Image URL List ───────────────────────────────────────────── */
+.img-url-list { display: flex; flex-direction: column; gap: 8px; }
+.img-url-item { display: flex; gap: 8px; align-items: center; }
+.img-url-preview { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; border: 1px solid var(--border); flex-shrink: 0; }
+.img-url-remove { width: 28px; height: 28px; border-radius: 50%; background: var(--red-light); color: var(--red); border: none; cursor: pointer; font-size: 14px; flex-shrink: 0; transition: background .2s; }
+.img-url-remove:hover { background: var(--red); color: white; }
+
+/* ── Rating Summary ───────────────────────────────────────────── */
+.rating-summary { display: flex; align-items: center; gap: 20px; padding: 16px 0; }
+.rating-big { font-size: 48px; font-weight: 700; color: var(--text-h); line-height: 1; }
+.rating-stars-big { display: flex; gap: 4px; margin: 4px 0; }
+.rating-star-big { font-size: 22px; }
+.rating-count { font-size: 13px; color: var(--text-s); }
+.rating-bars { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.rating-bar-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.rating-bar-label { width: 16px; color: var(--text-s); font-weight: 600; text-align: right; flex-shrink: 0; }
+.rating-bar-track { flex: 1; height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden; }
+.rating-bar-fill { height: 100%; background: linear-gradient(90deg, var(--amber), #FCD34D); border-radius: 4px; transition: width .4s; }
+.rating-bar-count { width: 24px; color: var(--text-xs); font-size: 11px; }
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+/* ── Section Header ────────────────────────────────────────────── */
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+.section-title { font-size: 17px; font-weight: 700; color: var(--text-h); display: flex; align-items: center; gap: 8px; }
+.section-count { font-size: 12px; background: var(--sky-light); color: var(--sky-dark); padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+
+/* ── Toast Notification ─────────────────────────────────────────── */
+.toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 3000; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: var(--text-h); color: white; padding: 12px 18px;
+  border-radius: var(--radius-sm); font-size: 14px; font-weight: 500;
+  box-shadow: var(--shadow-lg); animation: toastIn .25s;
+  display: flex; align-items: center; gap: 8px; min-width: 240px;
+  max-width: 340px;
+}
+.toast.success { background: var(--mint-dark); }
+.toast.error { background: var(--red); }
+@keyframes toastIn { from { transform: translateX(60px); opacity: 0; } }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main { padding: 16px; }
+  .header { padding: 0 16px; }
+  .nav-tabs { padding: 0 12px; }
+  .card-body { padding: 16px; }
+  .card-header { padding: 16px; }
+  .doctor-card-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .rating-summary { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .review-admin-actions { width: 100%; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .doctor-card-grid { grid-template-columns: repeat(2, 1fr); }
+  .header-subtitle { display: none; }
+}
+
+/* ── Page transition ─────────────────────────────────────────── */
+.page { animation: pageIn .2s; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } }
+</style>
+</head>
+<body>
+<div class="app-shell" id="app">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-logo">👁️</div>
+      <div>
+        <div class="header-title">LASIK Review Center</div>
+        <div class="header-subtitle">โรงพยาบาลกลาง — ศูนย์เลสิก</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-sm" onclick="App.switchMode('patient')" id="btnModePatient">👤 ผู้ป่วย</button>
+      <button class="btn btn-ghost btn-sm" onclick="App.switchMode('admin')" id="btnModeAdmin">🔐 ผู้ดูแล</button>
+    </div>
+  </header>
+
+  <!-- Main content injected by JS -->
+  <div id="root"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" style="display:none" onclick="UI.closeLightbox()">
+    <img id="lightboxImg" src="" alt="preview">
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+// LASIK Review Management System — Frontend JS
+// Production Ready | Clean Architecture
+// ════════════════════════════════════════════════════════════
+
+// ── Configuration ────────────────────────────────────────────
+const CONFIG = {
+  API_URL: 'https://script.google.com/macros/s/AKfycbxKuXybl_pJIaAqbjPTTF3NkdgGfbXuQ9YjT01nijQOVnUZ3v9nwBSnh8EUJoqXOqoG/exec', // <-- ใส่ URL หลัง deploy GAS
+  ADMIN_TOKEN_KEY: 'lasik_admin_token',
+  ADMIN_PASS_KEY: 'lasik_admin_pass',
+};
+
+// ── State ────────────────────────────────────────────────────
+const State = {
+  mode: 'patient',   // 'patient' | 'admin'
+  patientTab: 'view', // 'view' | 'write'
+  adminTab: 'dashboard', // 'dashboard' | 'pending' | 'addDoctor' | 'addReviewDirect'
+  doctors: [],
+  reviews: [],
+  selectedDoctorId: null,
+  loading: false,
+  adminAuth: false,
+  adminPassword: '',
+};
+
+// ── Self-tests ───────────────────────────────────────────────
+function runSelfTests() {
+  // parseImagesUrl
+  console.assert(JSON.stringify(parseImagesUrl('')) === '[]', 'parseImagesUrl empty string');
+  console.assert(JSON.stringify(parseImagesUrl('["a","b"]')) === '["a","b"]', 'parseImagesUrl JSON');
+  console.assert(JSON.stringify(parseImagesUrl(['a'])) === '["a"]', 'parseImagesUrl array');
+  console.assert(JSON.stringify(parseImagesUrl(null)) === '[]', 'parseImagesUrl null');
+
+  // starsHtml
+  const s5 = starsHtml(5);
+  console.assert(s5.includes('filled') && !s5.includes('empty'), 'starsHtml 5 stars all filled');
+
+  // formatDate
+  const d = formatDate('2024-01-15T10:30:00.000Z');
+  console.assert(typeof d === 'string' && d.length > 0, 'formatDate returns string');
+
+  // avgRating
+  console.assert(avgRating([{rating:4},{rating:5}]) === 4.5, 'avgRating correct');
+  console.assert(avgRating([]) === 0, 'avgRating empty');
+
+  console.log('✅ All self-tests passed');
+}
+
+// ── Utilities ─────────────────────────────────────────────────
+function parseImagesUrl(val) {
+  if (!val || val === '') return [];
+  if (Array.isArray(val)) return val;
+  try {
+    const parsed = JSON.parse(val);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    if (typeof val === 'string' && val.includes(',')) {
+      return val.split(',').map(s => s.trim()).filter(Boolean);
+    }
+    return val ? [String(val)] : [];
+  }
+}
+
+function starsHtml(rating, size = 16) {
+  return Array.from({length:5}, (_,i) =>
+    `<span class="star ${i < rating ? 'filled' : 'empty'}" style="font-size:${size}px">${i < rating ? '★' : '☆'}</span>`
+  ).join('');
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString('th-TH', { year:'numeric', month:'short', day:'numeric' });
+  } catch { return iso; }
+}
+
+function avgRating(reviews) {
+  if (!reviews.length) return 0;
+  return reviews.reduce((s,r) => s + Number(r.rating), 0) / reviews.length;
+}
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function getInitial(name) {
+  if (!name) return '?';
+  return name.trim().charAt(0).toUpperCase();
+}
+
+// ── Toast ─────────────────────────────────────────────────────
+const Toast = {
+  show(msg, type = 'info', duration = 3200) {
+    const icons = { success:'✅', error:'❌', info:'ℹ️' };
+    const el = document.createElement('div');
+    el.className = `toast ${type}`;
+    el.innerHTML = `<span>${icons[type]||'ℹ️'}</span><span>${escHtml(msg)}</span>`;
+    document.getElementById('toastContainer').appendChild(el);
+    setTimeout(() => { el.style.opacity='0'; el.style.transition='opacity .3s'; setTimeout(()=>el.remove(),300); }, duration);
+  },
+  success(m) { this.show(m,'success'); },
+  error(m)   { this.show(m,'error'); },
+  info(m)    { this.show(m,'info'); },
+};
+
+// ── UI Helpers ────────────────────────────────────────────────
+const UI = {
+  render(html) { document.getElementById('root').innerHTML = html; },
+  openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  },
+  closeLightbox() { document.getElementById('lightbox').style.display = 'none'; },
+};
+
+// ── API Layer ─────────────────────────────────────────────────
+const API = {
+  async get(params) {
+    const url = new URL(CONFIG.API_URL);
+    Object.entries(params).forEach(([k,v]) => url.searchParams.set(k, v));
+    const res = await fetch(url.toString(), { method:'GET' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.message || 'API error');
+    return json.data;
+  },
+  async post(body) {
+    const res = await fetch(CONFIG.API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.message || 'API error');
+    return json.data;
+  },
+
+  async getDoctors()      { return this.get({ action:'getDoctors' }); },
+  async getReviews(params){ return this.get({ action:'getReviews', ...params }); },
+  async addReview(data)   { return this.post({ action:'addReview', ...data }); },
+  async addReviewDirect(data) { return this.post({ action:'addReviewDirect', adminPassword:State.adminPassword, ...data }); },
+  async addDoctor(data)   { return this.post({ action:'addDoctor', adminPassword:State.adminPassword, ...data }); },
+  async approveReview(id) { return this.post({ action:'approveReview', id, adminPassword:State.adminPassword }); },
+  async rejectReview(id)  { return this.post({ action:'rejectReview', id, adminPassword:State.adminPassword }); },
+  async deleteReview(id)  { return this.post({ action:'deleteReview', id, adminPassword:State.adminPassword }); },
+  async adminLogin(password) { return this.post({ action:'adminLogin', password }); },
+};
+
+// ── Data Actions ──────────────────────────────────────────────
+const Data = {
+  async loadDoctors() {
+    try {
+      State.doctors = await API.getDoctors();
+    } catch(e) {
+      State.doctors = [];
+      console.error('loadDoctors:', e);
+    }
+  },
+  async loadReviews(params = {}) {
+    try {
+      const all = await API.getReviews(params);
+      State.reviews = all.map(r => ({...r, images_url: parseImagesUrl(r.images_url)}));
+    } catch(e) {
+      State.reviews = [];
+      console.error('loadReviews:', e);
+    }
+  },
+  async refresh() {
+    await Promise.all([Data.loadDoctors(), Data.loadReviews()]);
+  }
+};
+
+// ════════════════════════════════════════════════════════════
+// ── PATIENT MODE ─────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+const PatientView = {
+  render() {
+    UI.render(`
+      <div class="page">
+        <nav class="nav-tabs">
+          <button class="nav-tab ${State.patientTab==='view'?'active':''}" onclick="PatientView.setTab('view')">👁️ ดูรีวิว</button>
+          <button class="nav-tab ${State.patientTab==='write'?'active':''}" onclick="PatientView.setTab('write')">✏️ เขียนรีวิว</button>
+        </nav>
+        <div class="main">
+          ${State.patientTab === 'view' ? this.renderViewTab() : this.renderWriteTab()}
+        </div>
+      </div>
+    `);
+  },
+
+  setTab(tab) {
+    State.patientTab = tab;
+    this.render();
+  },
+
+  // ── View Tab ──────────────────────────────────────────────
+  renderViewTab() {
+    const approvedReviews = State.reviews.filter(r => r.status === 'approved');
+    const filtered = State.selectedDoctorId
+      ? approvedReviews.filter(r => r.doctor_id === State.selectedDoctorId)
+      : approvedReviews;
+
+    const selectedDoctor = State.doctors.find(d => d.id === State.selectedDoctorId);
+
+    return `
+      <!-- Doctor Select -->
+      <div class="doctor-select-card">
+        <h2 style="margin-bottom:16px;font-size:16px">🏥 เลือกแพทย์เพื่อดูรีวิว</h2>
+        <div class="doctor-card-grid">
+          <div class="doctor-select-item ${!State.selectedDoctorId?'selected':''}"
+               onclick="PatientView.selectDoctor(null)">
+            <div class="doctor-avatar-lg">👨‍⚕️</div>
+            <div class="doctor-name">ทั้งหมด</div>
+            <div class="doctor-spec">แสดงรีวิวทุกแพทย์</div>
+          </div>
+          ${State.doctors.map(d => `
+            <div class="doctor-select-item ${State.selectedDoctorId===d.id?'selected':''}"
+                 onclick="PatientView.selectDoctor('${d.id}')">
+              <div class="doctor-avatar-lg">${d.image ? `<img src="${escHtml(d.image)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.src=''" alt="">` : '👨‍⚕️'}</div>
+              <div class="doctor-name">${escHtml(d.name)}</div>
+              <div class="doctor-spec">${escHtml(d.specialization)}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="card">
+        <div class="card-header">
+          <div class="section-title">
+            💬 รีวิวจากผู้รับบริการ
+            ${selectedDoctor ? `<span style="color:var(--sky-dark)">${escHtml(selectedDoctor.name)}</span>` : ''}
+          </div>
+          <span class="section-count">${filtered.length} รีวิว</span>
+        </div>
+        <div class="card-body">
+          ${this.renderRatingSummary(filtered)}
+          <div class="divider"></div>
+          ${this.renderReviewList(filtered)}
+        </div>
+      </div>
+    `;
+  },
+
+  renderRatingSummary(reviews) {
+    if (!reviews.length) return '';
+    const avg = avgRating(reviews);
+    const counts = [5,4,3,2,1].map(n => ({
+      n, count: reviews.filter(r => Number(r.rating) === n).length
+    }));
+    const max = reviews.length;
+    return `
+      <div class="rating-summary">
+        <div>
+          <div class="rating-big">${avg.toFixed(1)}</div>
+          <div class="rating-stars-big">${starsHtml(Math.round(avg), 22)}</div>
+          <div class="rating-count">${reviews.length} รีวิว</div>
+        </div>
+        <div class="rating-bars">
+          ${counts.map(({n, count}) => `
+            <div class="rating-bar-row">
+              <div class="rating-bar-label">${n}</div>
+              <div class="rating-bar-track">
+                <div class="rating-bar-fill" style="width:${max>0?Math.round(count/max*100):0}%"></div>
+              </div>
+              <div class="rating-bar-count">${count}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  renderReviewList(reviews) {
+    if (State.loading) return `
+      <div class="state-container">
+        <div class="spinner"></div>
+        <div class="state-title">กำลังโหลดรีวิว...</div>
+      </div>`;
+    if (!reviews.length) return `
+      <div class="state-container">
+        <div class="state-icon">💬</div>
+        <div class="state-title">ยังไม่มีรีวิว</div>
+        <div class="state-desc">ยังไม่มีรีวิวสำหรับแพทย์ที่เลือก เป็นคนแรกที่รีวิวได้เลย!</div>
+        <button class="btn btn-primary" onclick="PatientView.setTab('write')" style="margin-top:16px">✏️ เขียนรีวิว</button>
+      </div>`;
+
+    return `<div style="display:flex;flex-direction:column;gap:14px">
+      ${reviews.map(r => this.renderReviewCard(r)).join('')}
+    </div>`;
+  },
+
+  renderReviewCard(r) {
+    const doctorName = State.doctors.find(d=>d.id===r.doctor_id)?.name || 'แพทย์';
+    const images = parseImagesUrl(r.images_url);
+    const displayName = r.is_anonymous ? 'ไม่ระบุตัวตน' : escHtml(r.patient_name);
+    return `
+      <div class="review-card">
+        <div class="review-card-header">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">${r.is_anonymous ? '🙈' : getInitial(r.patient_name)}</div>
+            <div>
+              <div class="reviewer-name">${displayName} ${r.is_anonymous ? '<span class="anon-badge">🔒 ไม่ระบุตัวตน</span>' : ''}</div>
+              <div class="reviewer-date">แพทย์: ${escHtml(doctorName)} · ${formatDate(r.created_at)}</div>
+            </div>
+          </div>
+          <div class="review-stars">${starsHtml(Number(r.rating), 18)}</div>
+        </div>
+        <div class="review-comment">${escHtml(r.comment)}</div>
+        ${images.length ? `
+          <div class="review-images">
+            ${images.map(img => `<img class="review-img" src="${escHtml(img)}" alt="รูปภาพรีวิว" onclick="UI.openLightbox('${escHtml(img)}')" onerror="this.style.display='none'">`).join('')}
+          </div>` : ''}
+      </div>`;
+  },
+
+  selectDoctor(id) {
+    State.selectedDoctorId = id;
+    this.render();
+  },
+
+  // ── Write Tab ─────────────────────────────────────────────
+  renderWriteTab() {
+    const imgUrls = window._writeImgUrls || [];
+    return `
+      <div class="card" style="max-width:640px;margin:0 auto">
+        <div class="card-header">
+          <h2>✏️ เขียนรีวิวประสบการณ์ LASIK</h2>
+        </div>
+        <div class="card-body">
+          <div id="writeAlert"></div>
+          
+          <div class="form-group">
+            <label class="form-label">เลือกแพทย์ที่รักษา<span class="req">*</span></label>
+            <select class="form-control" id="wDoctor">
+              <option value="">-- เลือกแพทย์ --</option>
+              ${State.doctors.map(d=>`<option value="${d.id}">${escHtml(d.name)} — ${escHtml(d.specialization)}</option>`).join('')}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">ชื่อผู้รีวิว<span class="req">*</span></label>
+            <input class="form-control" type="text" id="wName" placeholder="ชื่อของคุณ" maxlength="80">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">คะแนนความพึงพอใจ<span class="req">*</span></label>
+            <div class="star-rating">
+              ${[5,4,3,2,1].map(n=>`
+                <input type="radio" name="wRating" id="wStar${n}" value="${n}">
+                <label for="wStar${n}" title="${n} ดาว">★</label>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">ความคิดเห็น / ประสบการณ์<span class="req">*</span></label>
+            <textarea class="form-control" id="wComment" placeholder="เขียนรีวิวประสบการณ์การรักษาของคุณ..." rows="5" maxlength="2000"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">รูปภาพ (URL) — ไม่บังคับ</label>
+            <div class="img-url-list" id="imgUrlList">
+              ${imgUrls.map((url,i) => this.renderImgUrlItem(url, i)).join('')}
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <input class="form-control" type="url" id="imgUrlInput" placeholder="https://example.com/photo.jpg" style="flex:1">
+              <button class="btn btn-ghost" onclick="PatientView.addImgUrl()" type="button">+ เพิ่ม</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="toggle-wrap" onclick="PatientView.toggleAnon()">
+              <div class="toggle ${window._writeAnon?'on':''}" id="anonToggle"></div>
+              <span class="toggle-label">🔒 ไม่ระบุตัวตน — ซ่อนชื่อในการแสดงผล</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-wrap" for="wPdpa">
+              <input type="checkbox" id="wPdpa">
+              <div class="checkbox-box"></div>
+              <span class="checkbox-label">ฉันยินยอมให้โรงพยาบาลนำข้อมูลรีวิวไปแสดงผลตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</span>
+            </label>
+          </div>
+
+          <button class="btn btn-success btn-full btn-lg" onclick="PatientView.submitReview()" id="submitBtn">
+            📨 ส่งรีวิว
+          </button>
+          <p style="text-align:center;font-size:12px;color:var(--text-xs);margin-top:10px">รีวิวจะถูกตรวจสอบก่อนเผยแพร่</p>
+        </div>
+      </div>
+    `;
+  },
+
+  renderImgUrlItem(url, i) {
+    return `
+      <div class="img-url-item">
+        <img class="img-url-preview" src="${escHtml(url)}" alt="" onerror="this.style.opacity='.3'">
+        <input class="form-control" type="url" value="${escHtml(url)}" onchange="PatientView.updateImgUrl(${i}, this.value)" style="flex:1">
+        <button class="img-url-remove" onclick="PatientView.removeImgUrl(${i})" type="button">✕</button>
+      </div>`;
+  },
+
+  addImgUrl() {
+    const input = document.getElementById('imgUrlInput');
+    const url = input.value.trim();
+    if (!url) return;
+    if (!window._writeImgUrls) window._writeImgUrls = [];
+    window._writeImgUrls.push(url);
+    input.value = '';
+    document.getElementById('imgUrlList').innerHTML =
+      window._writeImgUrls.map((u,i) => this.renderImgUrlItem(u,i)).join('');
+  },
+
+  removeImgUrl(i) {
+    window._writeImgUrls.splice(i, 1);
+    document.getElementById('imgUrlList').innerHTML =
+      window._writeImgUrls.map((u,j) => this.renderImgUrlItem(u,j)).join('');
+  },
+
+  updateImgUrl(i, val) { if (window._writeImgUrls) window._writeImgUrls[i] = val; },
+
+  toggleAnon() {
+    window._writeAnon = !window._writeAnon;
+    const t = document.getElementById('anonToggle');
+    if (t) t.className = `toggle ${window._writeAnon?'on':''}`;
+  },
+
+  showWriteAlert(msg, type = 'error') {
+    document.getElementById('writeAlert').innerHTML =
+      `<div class="alert alert-${type}">${escHtml(msg)}</div>`;
+  },
+
+  async submitReview() {
+    const doctor_id = document.getElementById('wDoctor').value;
+    const patient_name = document.getElementById('wName').value.trim();
+    const ratingEl = document.querySelector('input[name="wRating"]:checked');
+    const comment = document.getElementById('wComment').value.trim();
+    const pdpa = document.getElementById('wPdpa').checked;
+
+    if (!doctor_id)     return this.showWriteAlert('กรุณาเลือกแพทย์');
+    if (!patient_name)  return this.showWriteAlert('กรุณากรอกชื่อ');
+    if (!ratingEl)      return this.showWriteAlert('กรุณาให้คะแนน');
+    if (!comment)       return this.showWriteAlert('กรุณาเขียนรีวิว');
+    if (!pdpa)          return this.showWriteAlert('กรุณายืนยันการยินยอม PDPA');
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ กำลังส่ง...';
+
+    try {
+      await API.addReview({
+        doctor_id,
+        patient_name,
+        rating: Number(ratingEl.value),
+        comment,
+        images_url: window._writeImgUrls || [],
+        is_anonymous: !!window._writeAnon,
+      });
+
+      window._writeImgUrls = [];
+      window._writeAnon = false;
+      Toast.success('ส่งรีวิวเรียบร้อย! รอการอนุมัติจากเจ้าหน้าที่');
+      State.patientTab = 'view';
+      await Data.loadReviews({ status:'approved' });
+      this.render();
+    } catch(e) {
+      this.showWriteAlert('เกิดข้อผิดพลาด: ' + e.message);
+      btn.disabled = false;
+      btn.textContent = '📨 ส่งรีวิว';
+    }
+  },
+};
+
+// ════════════════════════════════════════════════════════════
+// ── ADMIN MODE ────────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+const AdminView = {
+  renderLogin() {
+    UI.render(`
+      <div class="login-screen">
+        <div class="login-box">
+          <div class="login-logo">🔐</div>
+          <h2 style="margin-bottom:8px">ผู้ดูแลระบบ</h2>
+          <p style="color:var(--text-s);margin-bottom:28px;font-size:14px">เข้าสู่ระบบจัดการรีวิว LASIK</p>
+          <div id="loginAlert"></div>
+          <div class="form-group">
+            <input class="form-control" type="password" id="loginPass" placeholder="รหัสผ่านผู้ดูแล"
+              onkeydown="if(event.key==='Enter') AdminView.doLogin()">
+          </div>
+          <button class="btn btn-primary btn-full btn-lg" onclick="AdminView.doLogin()" id="loginBtn">
+            🔓 เข้าสู่ระบบ
+          </button>
+          <button class="btn btn-ghost btn-full" onclick="App.switchMode('patient')" style="margin-top:12px">
+            ← กลับหน้าผู้ป่วย
+          </button>
+        </div>
+      </div>
+    `);
+  },
+
+  async doLogin() {
+    const pass = document.getElementById('loginPass').value;
+    const btn = document.getElementById('loginBtn');
+    btn.disabled = true; btn.textContent = '⏳ กำลังตรวจสอบ...';
+    try {
+      await API.adminLogin(pass);
+      State.adminAuth = true;
+      State.adminPassword = pass;
+      await Data.refresh();
+      this.render();
+    } catch(e) {
+      document.getElementById('loginAlert').innerHTML =
+        `<div class="alert alert-error">รหัสผ่านไม่ถูกต้อง</div>`;
+      btn.disabled = false; btn.textContent = '🔓 เข้าสู่ระบบ';
+    }
+  },
+
+  render() {
+    if (!State.adminAuth) { this.renderLogin(); return; }
+
+    const pending  = State.reviews.filter(r => r.status === 'pending');
+    const approved = State.reviews.filter(r => r.status === 'approved');
+    const rejected = State.reviews.filter(r => r.status === 'rejected');
+
+    UI.render(`
+      <div class="page">
+        <nav class="nav-tabs">
+          <button class="nav-tab ${State.adminTab==='dashboard'?'active':''}" onclick="AdminView.setTab('dashboard')">📊 Dashboard</button>
+          <button class="nav-tab ${State.adminTab==='pending'?'active':''}" onclick="AdminView.setTab('pending')">
+            ⏳ รอตรวจสอบ ${pending.length?`<span style="background:var(--amber);color:white;padding:1px 7px;border-radius:10px;font-size:11px">${pending.length}</span>`:''}
+          </button>
+          <button class="nav-tab ${State.adminTab==='approved'?'active':''}" onclick="AdminView.setTab('approved')">✅ อนุมัติแล้ว</button>
+          <button class="nav-tab ${State.adminTab==='rejected'?'active':''}" onclick="AdminView.setTab('rejected')">❌ ปฏิเสธ</button>
+          <button class="nav-tab ${State.adminTab==='addDoctor'?'active':''}" onclick="AdminView.setTab('addDoctor')">👨‍⚕️ เพิ่มแพทย์</button>
+          <button class="nav-tab ${State.adminTab==='addReviewDirect'?'active':''}" onclick="AdminView.setTab('addReviewDirect')">📝 เพิ่มรีวิว</button>
+        </nav>
+        <div class="main">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+            <h2>จัดการรีวิว LASIK</h2>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn btn-ghost btn-sm" onclick="AdminView.refresh()">🔄 รีเฟรช</button>
+              <button class="btn btn-ghost btn-sm" onclick="AdminView.logout()" style="color:var(--red)">🚪 ออกจากระบบ</button>
+            </div>
+          </div>
+          ${State.adminTab === 'dashboard'        ? this.renderDashboard(pending, approved, rejected) : ''}
+          ${State.adminTab === 'pending'          ? this.renderReviewList(pending, 'pending') : ''}
+          ${State.adminTab === 'approved'         ? this.renderReviewList(approved, 'approved') : ''}
+          ${State.adminTab === 'rejected'         ? this.renderReviewList(rejected, 'rejected') : ''}
+          ${State.adminTab === 'addDoctor'        ? this.renderAddDoctor() : ''}
+          ${State.adminTab === 'addReviewDirect'  ? this.renderAddReviewDirect() : ''}
+        </div>
+      </div>
+    `);
+  },
+
+  renderDashboard(pending, approved, rejected) {
+    const avg = avgRating(approved);
+    return `
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👨‍⚕️</div>
+          <div class="stat-number">${State.doctors.length}</div>
+          <div class="stat-label">แพทย์ทั้งหมด</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💬</div>
+          <div class="stat-number">${State.reviews.length}</div>
+          <div class="stat-label">รีวิวทั้งหมด</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-number" style="color:var(--amber)">${pending.length}</div>
+          <div class="stat-label">รอตรวจสอบ</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-number" style="color:var(--mint-dark)">${approved.length}</div>
+          <div class="stat-label">อนุมัติแล้ว</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">❌</div>
+          <div class="stat-number" style="color:var(--red)">${rejected.length}</div>
+          <div class="stat-label">ปฏิเสธ</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-number">${avg ? avg.toFixed(1) : '—'}</div>
+          <div class="stat-label">คะแนนเฉลี่ย</div>
+        </div>
+      </div>
+
+      ${pending.length ? `
+        <div class="alert alert-info">
+          ⏳ มีรีวิวรอการตรวจสอบ <strong>${pending.length} รายการ</strong>
+          <button class="btn btn-primary btn-sm" onclick="AdminView.setTab('pending')" style="margin-left:12px">ตรวจสอบเลย</button>
+        </div>` : ''}
+
+      <div class="card">
+        <div class="card-header"><div class="section-title">👨‍⚕️ รายชื่อแพทย์</div></div>
+        <div class="card-body">
+          ${!State.doctors.length ? `<div class="state-container"><div class="state-icon">👨‍⚕️</div><div class="state-title">ยังไม่มีแพทย์</div><button class="btn btn-primary" onclick="AdminView.setTab('addDoctor')" style="margin-top:16px">+ เพิ่มแพทย์</button></div>` : `
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px">
+              ${State.doctors.map(d => {
+                const dReviews = approved.filter(r => r.doctor_id === d.id);
+                return `
+                  <div class="stat-card" style="text-align:center">
+                    <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--mint));display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:22px">
+                      ${d.image ? `<img src="${escHtml(d.image)}" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'" alt="">` : '👨‍⚕️'}
+                    </div>
+                    <div style="font-weight:600;font-size:14px;color:var(--text-h)">${escHtml(d.name)}</div>
+                    <div style="font-size:12px;color:var(--text-s);margin:4px 0">${escHtml(d.specialization)}</div>
+                    <div style="font-size:12px;color:var(--sky-dark)">${dReviews.length} รีวิว · ⭐ ${dReviews.length ? avgRating(dReviews).toFixed(1) : '—'}</div>
+                  </div>`;
+              }).join('')}
+            </div>`}
+        </div>
+      </div>
+    `;
+  },
+
+  renderReviewList(reviews, statusFilter) {
+    const statusLabel = { pending:'รอตรวจสอบ', approved:'อนุมัติแล้ว', rejected:'ปฏิเสธ' };
+    if (!reviews.length) return `
+      <div class="card">
+        <div class="card-body">
+          <div class="state-container">
+            <div class="state-icon">📭</div>
+            <div class="state-title">ไม่มีรีวิว${statusLabel[statusFilter]?'ที่'+statusLabel[statusFilter]:''}</div>
+          </div>
+        </div>
+      </div>`;
+
+    return `
+      <div class="section-header">
+        <div class="section-title">${statusLabel[statusFilter]||''}</div>
+        <span class="section-count">${reviews.length} รายการ</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        ${reviews.map(r => this.renderAdminReviewCard(r)).join('')}
+      </div>`;
+  },
+
+  renderAdminReviewCard(r) {
+    const doctor = State.doctors.find(d => d.id === r.doctor_id);
+    const images = parseImagesUrl(r.images_url);
+    const displayName = r.is_anonymous ? '🙈 ไม่ระบุตัวตน' : escHtml(r.patient_name);
+    return `
+      <div class="review-admin-card">
+        <div class="review-admin-header">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--text-h)">${displayName}</div>
+            <div style="font-size:12px;color:var(--text-s);margin-top:3px">
+              แพทย์: ${doctor ? escHtml(doctor.name) : r.doctor_id} · ${formatDate(r.created_at)}
+            </div>
+            <div style="margin-top:6px;display:flex;align-items:center;gap:8px">
+              ${starsHtml(Number(r.rating), 15)}
+              <span class="badge badge-${r.status}">${r.status==='pending'?'⏳ รอตรวจสอบ':r.status==='approved'?'✅ อนุมัติ':'❌ ปฏิเสธ'}</span>
+            </div>
+          </div>
+          <div class="review-admin-actions">
+            ${r.status !== 'approved' ? `<button class="btn btn-success btn-sm" onclick="AdminView.approve('${r.id}')">✅ อนุมัติ</button>` : ''}
+            ${r.status !== 'rejected' ? `<button class="btn btn-ghost btn-sm" onclick="AdminView.reject('${r.id}')" style="color:var(--red)">❌ ปฏิเสธ</button>` : ''}
+            <button class="btn btn-ghost btn-sm" onclick="AdminView.deleteReview('${r.id}')" style="color:var(--text-xs)">🗑️</button>
+          </div>
+        </div>
+        <div style="font-size:14px;color:var(--text-b);line-height:1.7;margin-bottom:10px">${escHtml(r.comment)}</div>
+        ${images.length ? `
+          <div class="review-images" style="max-width:300px">
+            ${images.map(img => `<img class="review-img" src="${escHtml(img)}" alt="" onclick="UI.openLightbox('${escHtml(img)}')" onerror="this.style.display='none'">`).join('')}
+          </div>` : ''}
+      </div>`;
+  },
+
+  renderAddDoctor() {
+    return `
+      <div class="card" style="max-width:560px;margin:0 auto">
+        <div class="card-header"><h2>👨‍⚕️ เพิ่มข้อมูลแพทย์</h2></div>
+        <div class="card-body">
+          <div id="addDoctorAlert"></div>
+          <div class="form-group">
+            <label class="form-label">ชื่อ-นามสกุล<span class="req">*</span></label>
+            <input class="form-control" type="text" id="dName" placeholder="นพ. / พญ. ชื่อ นามสกุล">
+          </div>
+          <div class="form-group">
+            <label class="form-label">ความเชี่ยวชาญ<span class="req">*</span></label>
+            <input class="form-control" type="text" id="dSpec" placeholder="เช่น จักษุแพทย์ผู้เชี่ยวชาญด้าน LASIK">
+          </div>
+          <div class="form-group">
+            <label class="form-label">รูปโปรไฟล์ (URL) — ไม่บังคับ</label>
+            <input class="form-control" type="url" id="dImage" placeholder="https://example.com/doctor.jpg">
+          </div>
+          <button class="btn btn-success btn-full btn-lg" onclick="AdminView.doAddDoctor()">
+            ➕ เพิ่มแพทย์
+          </button>
+        </div>
+      </div>`;
+  },
+
+  async doAddDoctor() {
+    const name = document.getElementById('dName').value.trim();
+    const spec = document.getElementById('dSpec').value.trim();
+    const image = document.getElementById('dImage').value.trim();
+    if (!name) { document.getElementById('addDoctorAlert').innerHTML = `<div class="alert alert-error">กรุณากรอกชื่อแพทย์</div>`; return; }
+    if (!spec) { document.getElementById('addDoctorAlert').innerHTML = `<div class="alert alert-error">กรุณากรอกความเชี่ยวชาญ</div>`; return; }
+    try {
+      await API.addDoctor({ name, specialization:spec, image });
+      Toast.success('เพิ่มแพทย์เรียบร้อย');
+      await Data.loadDoctors();
+      this.setTab('dashboard');
+    } catch(e) {
+      document.getElementById('addDoctorAlert').innerHTML = `<div class="alert alert-error">${escHtml(e.message)}</div>`;
+    }
+  },
+
+  renderAddReviewDirect() {
+    return `
+      <div class="card" style="max-width:600px;margin:0 auto">
+        <div class="card-header">
+          <div>
+            <h2>📝 เพิ่มรีวิวโดยตรง</h2>
+            <div style="font-size:12px;color:var(--sky-dark);margin-top:4px">รีวิวที่เพิ่มโดยผู้ดูแลจะถูกอนุมัติทันที</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="addRevDirectAlert"></div>
+          <div class="form-group">
+            <label class="form-label">เลือกแพทย์<span class="req">*</span></label>
+            <select class="form-control" id="rdDoctor">
+              <option value="">-- เลือกแพทย์ --</option>
+              ${State.doctors.map(d=>`<option value="${d.id}">${escHtml(d.name)}</option>`).join('')}
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ชื่อผู้ป่วย<span class="req">*</span></label>
+            <input class="form-control" type="text" id="rdName" placeholder="ชื่อผู้ป่วย">
+          </div>
+          <div class="form-group">
+            <label class="form-label">คะแนน (1-5)<span class="req">*</span></label>
+            <div class="star-rating">
+              ${[5,4,3,2,1].map(n=>`
+                <input type="radio" name="rdRating" id="rdStar${n}" value="${n}">
+                <label for="rdStar${n}" title="${n} ดาว">★</label>
+              `).join('')}
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ความคิดเห็น<span class="req">*</span></label>
+            <textarea class="form-control" id="rdComment" rows="4" placeholder="รายละเอียดรีวิว..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">URL รูปภาพ (คั่นด้วย comma)</label>
+            <input class="form-control" type="text" id="rdImages" placeholder="https://img1.jpg, https://img2.jpg">
+          </div>
+          <div class="form-group">
+            <div class="toggle-wrap" onclick="AdminView.toggleAnonDirect()">
+              <div class="toggle" id="anonDirectToggle"></div>
+              <span class="toggle-label">ไม่ระบุตัวตน</span>
+            </div>
+          </div>
+          <button class="btn btn-success btn-full btn-lg" onclick="AdminView.doAddReviewDirect()">
+            ✅ เพิ่มรีวิวและอนุมัติทันที
+          </button>
+        </div>
+      </div>`;
+  },
+
+  toggleAnonDirect() {
+    window._adminAnon = !window._adminAnon;
+    const t = document.getElementById('anonDirectToggle');
+    if (t) t.className = `toggle ${window._adminAnon?'on':''}`;
+  },
+
+  async doAddReviewDirect() {
+    const doctor_id = document.getElementById('rdDoctor').value;
+    const patient_name = document.getElementById('rdName').value.trim();
+    const rEl = document.querySelector('input[name="rdRating"]:checked');
+    const comment = document.getElementById('rdComment').value.trim();
+    const imagesRaw = document.getElementById('rdImages').value.trim();
+    const images_url = imagesRaw ? imagesRaw.split(',').map(s=>s.trim()).filter(Boolean) : [];
+
+    if (!doctor_id || !patient_name || !rEl || !comment) {
+      document.getElementById('addRevDirectAlert').innerHTML = `<div class="alert alert-error">กรุณากรอกข้อมูลให้ครบ</div>`;
+      return;
+    }
+    try {
+      await API.addReviewDirect({ doctor_id, patient_name, rating:Number(rEl.value), comment, images_url, is_anonymous:!!window._adminAnon });
+      Toast.success('เพิ่มรีวิวเรียบร้อย');
+      window._adminAnon = false;
+      await Data.loadReviews();
+      this.setTab('approved');
+    } catch(e) {
+      document.getElementById('addRevDirectAlert').innerHTML = `<div class="alert alert-error">${escHtml(e.message)}</div>`;
+    }
+  },
+
+  setTab(tab) {
+    State.adminTab = tab;
+    this.render();
+  },
+
+  async approve(id) {
+    try {
+      await API.approveReview(id);
+      Toast.success('อนุมัติรีวิวแล้ว');
+      await Data.loadReviews();
+      this.render();
+    } catch(e) { Toast.error(e.message); }
+  },
+
+  async reject(id) {
+    try {
+      await API.rejectReview(id);
+      Toast.info('ปฏิเสธรีวิวแล้ว');
+      await Data.loadReviews();
+      this.render();
+    } catch(e) { Toast.error(e.message); }
+  },
+
+  async deleteReview(id) {
+    if (!confirm('ยืนยันการลบรีวิวนี้?')) return;
+    try {
+      await API.deleteReview(id);
+      Toast.success('ลบรีวิวแล้ว');
+      await Data.loadReviews();
+      this.render();
+    } catch(e) { Toast.error(e.message); }
+  },
+
+  async refresh() {
+    Toast.info('กำลังโหลดข้อมูล...');
+    await Data.refresh();
+    this.render();
+    Toast.success('โหลดข้อมูลสำเร็จ');
+  },
+
+  logout() {
+    State.adminAuth = false;
+    State.adminPassword = '';
+    App.switchMode('patient');
+  },
+};
+
+// ════════════════════════════════════════════════════════════
+// ── App Controller ────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+const App = {
+  async init() {
+    // Show loading
+    document.getElementById('root').innerHTML = `
+      <div class="state-container" style="min-height:50vh">
+        <div class="spinner"></div>
+        <div class="state-title">กำลังโหลดระบบ...</div>
+        <div class="state-desc">กำลังเชื่อมต่อฐานข้อมูล</div>
+      </div>`;
+
+    try {
+      await Data.refresh();
+    } catch(e) {
+      document.getElementById('root').innerHTML = `
+        <div class="state-container" style="min-height:50vh">
+          <div class="state-icon">⚠️</div>
+          <div class="state-title">ไม่สามารถเชื่อมต่อได้</div>
+          <div class="state-desc">กรุณาตรวจสอบ API URL ใน CONFIG.API_URL<br><small style="color:var(--red)">${e.message}</small></div>
+          <button class="btn btn-primary" onclick="App.init()" style="margin-top:16px">🔄 ลองอีกครั้ง</button>
+        </div>`;
+      return;
+    }
+
+    this.render();
+    runSelfTests();
+  },
+
+  render() {
+    if (State.mode === 'admin') {
+      AdminView.render();
+    } else {
+      PatientView.render();
+    }
+  },
+
+  async switchMode(mode) {
+    State.mode = mode;
+    if (mode === 'admin' && !State.adminAuth) {
+      AdminView.renderLogin();
+    } else {
+      this.render();
+    }
+  },
+};
+
+// ── Bootstrap ─────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => App.init());
+</script>
+</body>
+</html>
