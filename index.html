@@ -583,7 +583,7 @@ select.form-control { cursor: pointer; }
 // CONFIG
 // ════════════════════════════════════════════════════════════
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbwiBAyrdWSJeu9-k_myoiJBxJ2URL5bTOqjYCPGjSQBTA4gBdUmBnHDfYtza9x4Hf2z/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbzNCDgzyrBZMUOiO8GN4D9KcToJlHRq3qvdX_Xn0dAeEHDDOPxE8G4Ah_oJU3bewDlv/exec',
   // รหัสสำรอง: ใช้เมื่อ GAS API ไม่พร้อม (offline/dev mode)
   LOCAL_ADMIN_PASS: 'admin1234',
   USE_MOCK: false, // ← ตั้งเป็น true เพื่อใช้ข้อมูลจำลองแทน GAS
@@ -1119,7 +1119,7 @@ const AdminView = {
           <div class="login-logo">🔐</div>
           <h2 style="margin-bottom:8px">ผู้ดูแลระบบ</h2>
           <p style="color:var(--text-s);margin-bottom:6px;font-size:14px">เข้าสู่ระบบจัดการรีวิว LASIK</p>
-          ${CONFIG.USE_MOCK ? `<div class="alert alert-info" style="font-size:12px;margin-bottom:16px">🧪 โหมด Mock — รหัสผ่าน: <strong>${CONFIG.LOCAL_ADMIN_PASS}</strong></div>` : `<div class="alert alert-info" style="font-size:12px;margin-bottom:16px">💡 หาก API ไม่พร้อม ระบบจะใช้รหัสสำรอง: <strong>${CONFIG.LOCAL_ADMIN_PASS}</strong></div>`}
+          ${CONFIG.USE_MOCK ? `<div class="alert alert-info" style="font-size:12px;margin-bottom:16px">🧪 โหมด Mock — รหัสผ่าน: <strong>${CONFIG.LOCAL_ADMIN_PASS}</strong></div>` : `<div 
           <div id="loginAlert"></div>
           <div class="form-group">
             <input class="form-control" type="password" id="loginPass" placeholder="รหัสผ่านผู้ดูแล"
