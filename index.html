@@ -604,7 +604,7 @@ select.form-control { cursor: pointer; }
 // CONFIG
 // ════════════════════════════════════════════════════════════
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbwaQT9bpamr5PoknQlXu-deO1Hi68SDlH9b6VJOy4eiJy5e4O3pY0Lz2P2WCluqKOoH/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbxRiiVCCkkxfdgdYp0EJ899EgqcLd-bg9cMYPfdKUPHTJC140QFbsw-Pv-UXieT_6xf/exec',
   // รหัสสำรอง: ใช้เมื่อ GAS API ไม่พร้อม (offline/dev mode)
   LOCAL_ADMIN_PASS: 'admin1234',
   USE_MOCK: false, // ← ตั้งเป็น true เพื่อใช้ข้อมูลจำลองแทน GAS
@@ -639,7 +639,6 @@ const State = {
   loading: false,
   adminAuth: false,
   adminPassword: '',
-  isMockMode: false,
 };
 
 // ════════════════════════════════════════════════════════════
@@ -805,51 +804,23 @@ const RealAPI = {
   async adminLogin(password)      { return this._post({ action:'adminLogin', password }); },
 };
 
-// Smart API: ลอง RealAPI ก่อน ถ้า fail และ CONFIG.USE_MOCK = true ใช้ MockAPI แทน
+// API Layer: ใช้ MockAPI ถ้า USE_MOCK=true ไม่งั้นใช้ RealAPI เสมอ
 const API = {
   async _call(fn, ...args) {
-    if (State.isMockMode || CONFIG.USE_MOCK) return MockAPI[fn](...args);
-    try {
-      return await RealAPI[fn](...args);
-    } catch(e) {
-      // ถ้าเป็น network error ให้ใช้ mock แทน
-      if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError') || e.message.includes('HTTP 0')) {
-        console.warn('API unreachable, switching to mock mode');
-        State.isMockMode = true;
-        Toast.info('⚠️ ทำงานในโหมดออฟไลน์ (Mock Data)');
-        return MockAPI[fn](...args);
-      }
-      throw e;
-    }
+    if (CONFIG.USE_MOCK) return MockAPI[fn](...args);
+    return RealAPI[fn](...args);
   },
-  getDoctors()              { return this._call('getDoctors'); },
-  getReviews(p)             { return this._call('getReviews', p); },
-  addReview(d)              { return this._call('addReview', d); },
-  addReviewDirect(d)        { return this._call('addReviewDirect', d); },
-  addDoctor(d)              { return this._call('addDoctor', d); },
-  editDoctor(d)             { return this._call('editDoctor', d); },
-  deleteDoctor(id)          { return this._call('deleteDoctor', id); },
-  approveReview(id)         { return this._call('approveReview', id); },
-  rejectReview(id)          { return this._call('rejectReview', id); },
-  deleteReview(id)          { return this._call('deleteReview', id); },
-  // Login: ลอง Real ก่อน ถ้า network fail → ลอง local password
-  async adminLogin(password) {
-    if (State.isMockMode || CONFIG.USE_MOCK) return MockAPI.adminLogin(password);
-    try {
-      return await RealAPI.adminLogin(password);
-    } catch(e) {
-      if (e.message.includes('Failed to fetch') || e.message.includes('NetworkError') || e.message.includes('HTTP 0')) {
-        // ออฟไลน์ → ใช้รหัสสำรอง
-        if (password === CONFIG.LOCAL_ADMIN_PASS) {
-          State.isMockMode = true;
-          Toast.info('⚠️ เข้าสู่ระบบด้วยรหัสสำรอง (โหมดออฟไลน์)');
-          return true;
-        }
-        throw new Error('รหัสผ่านไม่ถูกต้อง');
-      }
-      throw e;
-    }
-  },
+  getDoctors()        { return this._call('getDoctors'); },
+  getReviews(p)       { return this._call('getReviews', p); },
+  addReview(d)        { return this._call('addReview', d); },
+  addReviewDirect(d)  { return this._call('addReviewDirect', d); },
+  addDoctor(d)        { return this._call('addDoctor', d); },
+  editDoctor(d)       { return this._call('editDoctor', d); },
+  deleteDoctor(id)    { return this._call('deleteDoctor', id); },
+  approveReview(id)   { return this._call('approveReview', id); },
+  rejectReview(id)    { return this._call('rejectReview', id); },
+  deleteReview(id)    { return this._call('deleteReview', id); },
+  adminLogin(pass)    { return this._call('adminLogin', pass); },
 };
 
 // ════════════════════════════════════════════════════════════
@@ -1175,7 +1146,9 @@ const AdminView = {
     const pending  = State.reviews.filter(r => r.status === 'pending');
     const approved = State.reviews.filter(r => r.status === 'approved');
     const rejected = State.reviews.filter(r => r.status === 'rejected');
-    const modeTag = State.isMockMode ? `<span style="font-size:11px;background:var(--amber-light);color:#92400E;padding:2px 8px;border-radius:8px;margin-left:8px">🧪 Mock</span>` : '';
+    UI.render(`
+      <div class="page">
+        <nav class="nav-tabs">
     UI.render(`
       <div class="page">
         <nav class="nav-tabs">
@@ -1190,7 +1163,7 @@ const AdminView = {
         </nav>
         <div class="main">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
-            <h2>จัดการรีวิว LASIK ${modeTag}</h2>
+            <h2>จัดการรีวิว LASIK</h2>
             <div style="display:flex;gap:8px;align-items:center">
               <button class="btn btn-ghost btn-sm" onclick="AdminView.refresh()">🔄 รีเฟรช</button>
               <button class="btn btn-ghost btn-sm" onclick="AdminView.logout()" style="color:var(--red)">🚪 ออกจากระบบ</button>
@@ -1501,7 +1474,6 @@ const AdminView = {
   logout() {
     State.adminAuth = false;
     State.adminPassword = '';
-    State.isMockMode = false;
     App.switchMode('patient');
   },
 };
