@@ -424,7 +424,7 @@ select.form-control { cursor: pointer; }
     <div class="header-brand">
       <div class="header-logo">👁️</div>
       <div>
-        <div class="header-title">LASIK Review</div>
+        <div class="header-title">LASIK Review Center</div>
         <div class="header-subtitle">โรงพยาบาลกลาง — ศูนย์เลสิก</div>
       </div>
     </div>
@@ -535,10 +535,10 @@ select.form-control { cursor: pointer; }
 
         <h3 style="color:#1E40AF;font-size:15px;margin-bottom:8px">7. ติดต่อเจ้าหน้าที่คุ้มครองข้อมูล (DPO)</h3>
         <div style="background:#EFF6FF;border-radius:10px;padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:6px">
-          <div>🏥 <strong>โรงพยาบาลกลาง</strong> — ชั้น 16 ศูนย์ตรวจและรักษาสายตา</div>
-          <div>📧 E-mail: <a href="mailto:klanglasik.inform@gmail.com" style="color:#1D4ED8">klanglasik.inform@gmail.com</a></div>
-          <div>📞 โทร: 02-220-8000 ต่อ 11641-2 (วันทำการ 08.00–16.00 น.)</div>
-          <div>📍 ถนนหลวง แขวงป้อมปราบ เขตป้อมปราบศัตรูพ่าย กรุงเทพมหานคร 10100</div>
+          <div>🏥 <strong>โรงพยาบาลกลาง</strong> — ศูนย์ตรวจและรักษาสายตา</div>
+          <div>📧 E-mail: <a href="mailto:dpo@klanghos.go.th" style="color:#1D4ED8">dpo@klanghos.go.th</a></div>
+          <div>📞 โทร: 02-220-8000 ต่อ 1234 (วันทำการ 08.00–17.00 น.)</div>
+          <div>📍 ถนนหลวง แขวงวังบูรพาภิรมย์ เขตพระนคร กรุงเทพมหานคร 10200</div>
         </div>
 
       </div>
@@ -583,7 +583,7 @@ select.form-control { cursor: pointer; }
 // CONFIG
 // ════════════════════════════════════════════════════════════
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbzNCDgzyrBZMUOiO8GN4D9KcToJlHRq3qvdX_Xn0dAeEHDDOPxE8G4Ah_oJU3bewDlv/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbxRiiVCCkkxfdgdYp0EJ899EgqcLd-bg9cMYPfdKUPHTJC140QFbsw-Pv-UXieT_6xf/exec',
   // รหัสสำรอง: ใช้เมื่อ GAS API ไม่พร้อม (offline/dev mode)
   LOCAL_ADMIN_PASS: 'admin1234',
   USE_MOCK: false, // ← ตั้งเป็น true เพื่อใช้ข้อมูลจำลองแทน GAS
@@ -1119,7 +1119,7 @@ const AdminView = {
           <div class="login-logo">🔐</div>
           <h2 style="margin-bottom:8px">ผู้ดูแลระบบ</h2>
           <p style="color:var(--text-s);margin-bottom:6px;font-size:14px">เข้าสู่ระบบจัดการรีวิว LASIK</p>
-          ${CONFIG.USE_MOCK ? `<div class="alert alert-info" style="font-size:12px;margin-bottom:16px">🧪 โหมด Mock — รหัสผ่าน: <strong>${CONFIG.LOCAL_ADMIN_PASS}</strong></div>` }
+          ${CONFIG.USE_MOCK ? `<div class="alert alert-info" style="font-size:12px;margin-bottom:16px">🧪 โหมดทดสอบ (Mock Data)</div>` : ''}
           <div id="loginAlert"></div>
           <div class="form-group">
             <input class="form-control" type="password" id="loginPass" placeholder="รหัสผ่านผู้ดูแล"
