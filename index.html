@@ -604,7 +604,7 @@ select.form-control { cursor: pointer; }
 // CONFIG
 // ════════════════════════════════════════════════════════════
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbwaQT9bpamr5PoknQlXu-deO1Hi68SDlH9b6VJOy4eiJy5e4O3pY0Lz2P2WCluqKOoH/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbyzRlB0moojNExtO8F_e0dl7pW7-62xjNqeeHPHLpabNMwnICkuttH_pilZ5NGuTN1d/exec',
   // รหัสสำรอง: ใช้เมื่อ GAS API ไม่พร้อม (offline/dev mode)
   LOCAL_ADMIN_PASS: 'admin1234',
   USE_MOCK: false, // ← ตั้งเป็น true เพื่อใช้ข้อมูลจำลองแทน GAS
@@ -1146,9 +1146,6 @@ const AdminView = {
     const pending  = State.reviews.filter(r => r.status === 'pending');
     const approved = State.reviews.filter(r => r.status === 'approved');
     const rejected = State.reviews.filter(r => r.status === 'rejected');
-    UI.render(`
-      <div class="page">
-        <nav class="nav-tabs">
     UI.render(`
       <div class="page">
         <nav class="nav-tabs">
